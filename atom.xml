@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jaysurplus.github.io/"/>
-  <updated>2016-05-01T06:16:12.000Z</updated>
+  <updated>2016-05-01T06:36:03.000Z</updated>
   <id>http://jaysurplus.github.io/</id>
   
   <author>
@@ -14,6 +14,31 @@
   </author>
   
   <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>这是一个测试哦</title>
+    <link href="http://jaysurplus.github.io/2016/05/01/test/"/>
+    <id>http://jaysurplus.github.io/2016/05/01/test/</id>
+    <published>2016-05-01T06:32:13.000Z</published>
+    <updated>2016-05-01T06:36:03.000Z</updated>
+    
+    <content type="html">&lt;h3 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello World&quot;&gt;&lt;/a&gt;Hello World&lt;/h3&gt;&lt;p&gt;Haskell helloworld!&lt;/p&gt;
+&lt;figure class=&quot;highlight haskell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;title&quot;&gt;main&lt;/span&gt; :: &lt;span class=&quot;type&quot;&gt;IO&lt;/span&gt; ()&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;&lt;span class=&quot;title&quot;&gt;main&lt;/span&gt; = putStrLn &lt;span class=&quot;string&quot;&gt;&quot;hello&quot;&lt;/span&gt;&lt;/span&gt;&lt;br&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/figure&gt;
+</content>
+    
+    <summary type="html">
+    
+      &lt;h3 id=&quot;Hello-World&quot;&gt;&lt;a href=&quot;#Hello-World&quot; class=&quot;headerlink&quot; title=&quot;Hello World&quot;&gt;&lt;/a&gt;Hello World&lt;/h3&gt;&lt;p&gt;Haskell helloworld!&lt;/p&gt;
+&lt;figure cl
+    
+    </summary>
+    
+      <category term="算法/algorithm" scheme="http://jaysurplus.github.io/categories/%E7%AE%97%E6%B3%95-algorithm/"/>
+    
+    
+      <category term="算法" scheme="http://jaysurplus.github.io/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>Hello World</title>
