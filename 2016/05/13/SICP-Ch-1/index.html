@@ -17,10 +17,10 @@
     <meta name="description" content="Chapter 1 Building Abstractions with ProceduresExercise 1.2
 Translate the following expression into prefix form:
 
-  $(5+4+(2-(3-(6+4/5))))/(3(6-2)(2-7))$
+  $$(5+4+(2-(3-(6+4/5))))/(3(6-2)(2-7))$$
 这一题比较直接， 答案如下：
 ; Exercise 1.2
-(/ (+ 5 4 (- 2 (">
+(/ (+ 5 4 (- 2">
 <meta property="og:type" content="article">
 <meta property="og:title" content="SICP第一章课后习题">
 <meta property="og:url" content="http://jaysurplus.github.io/2016/05/13/SICP-Ch-1/index.html">
@@ -28,20 +28,20 @@ Translate the following expression into prefix form:
 <meta property="og:description" content="Chapter 1 Building Abstractions with ProceduresExercise 1.2
 Translate the following expression into prefix form:
 
-  $(5+4+(2-(3-(6+4/5))))/(3(6-2)(2-7))$
+  $$(5+4+(2-(3-(6+4/5))))/(3(6-2)(2-7))$$
 这一题比较直接， 答案如下：
 ; Exercise 1.2
-(/ (+ 5 4 (- 2 (">
-<meta property="og:updated_time" content="2016-05-14T12:39:21.000Z">
+(/ (+ 5 4 (- 2">
+<meta property="og:updated_time" content="2016-05-14T22:43:58.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SICP第一章课后习题">
 <meta name="twitter:description" content="Chapter 1 Building Abstractions with ProceduresExercise 1.2
 Translate the following expression into prefix form:
 
-  $(5+4+(2-(3-(6+4/5))))/(3(6-2)(2-7))$
+  $$(5+4+(2-(3-(6+4/5))))/(3(6-2)(2-7))$$
 这一题比较直接， 答案如下：
 ; Exercise 1.2
-(/ (+ 5 4 (- 2 (">
+(/ (+ 5 4 (- 2">
 
     
     <link rel="alternative" href="/atom.xml" title="JaySurplus" type="application/atom+xml">
@@ -129,7 +129,7 @@ Translate the following expression into prefix form:
 		<h1 id="Chapter-1-Building-Abstractions-with-Procedures"><a href="#Chapter-1-Building-Abstractions-with-Procedures" class="headerlink" title="Chapter 1 Building Abstractions with Procedures"></a>Chapter 1 Building Abstractions with Procedures</h1><h2 id="Exercise-1-2"><a href="#Exercise-1-2" class="headerlink" title="Exercise 1.2"></a>Exercise 1.2</h2><blockquote>
 <p>Translate the following expression into prefix form:</p>
 </blockquote>
-<p>  $(5+4+(2-(3-(6+4/5))))/(3(6-2)(2-7))$</p>
+<p>  $$(5+4+(2-(3-(6+4/5))))/(3(6-2)(2-7))$$</p>
 <p>这一题比较直接， 答案如下：</p>
 <pre><code class="scheme">; Exercise 1.2
 (/ (+ 5 4 (- 2 (- 3 (+ 6 (/ 4 5)))))
@@ -175,6 +175,42 @@ Translate the following expression into prefix form:
 <p>测试:</p>
 <pre><code class="scheme">&gt; (square_sum_bigger_two 2 3 5)
 &gt; 34
+</code></pre>
+<h2 id="Exercise-1-8"><a href="#Exercise-1-8" class="headerlink" title="Exercise 1.8"></a>Exercise 1.8</h2><p>Newton’s method for cube roots is based on the fact that if y is an approximation to the cube root of x, then a better approximation is given by the value</p>
+<p>  $$ (x/y^2+2y)/3 $$</p>
+<p>Use this formula to implement a cube-root procedure analogous to the square-root procedure.</p>
+<h3 id="解答"><a href="#解答" class="headerlink" title="解答:"></a>解答:</h3><p>这道题答案的结构与例题<code>1.1.7</code>很相似，需要注意的细节是与立方相关的计算，请具体参考下面的代码：</p>
+<pre><code class="scheme">; Cube-root
+
+; Compute cube
+(define (cube x)
+  (* x x x))
+
+; Compute square
+(define (square x)
+  (* x x))
+
+; computation strategy
+(define (cube_root guess x)
+  (if (good-enough_cube? guess x)
+      guess
+      (cube_root (improve_cube guess x) x)))
+
+; Compute a better approximation
+(define (improve_cube guess x)
+  (/ (+ (/ x (square guess)) (* 2 guess)) 3))
+
+; Test the guess is good enough?
+(define (good-enough_cube? guess x)
+  (&lt; (abs (- (cube guess) x)) 0.001 ))
+
+; Main function to compute cube root
+(define (cube_r x)
+  (cube_root 1.0 x))
+</code></pre>
+<p>测试结果如下:</p>
+<pre><code class="scheme">&gt; (cube_r 31.00614)
+&gt; 3.1415926337132434
 </code></pre>
   
 	</div>
