@@ -1,11 +1,11 @@
 
   
     <!DOCTYPE HTML>
-<html lang="zh-CN">
+<html >
 <head>
   <meta charset="UTF-8">
   
-    <title>SICP第一章课后习题 | JaySurplus</title>
+    <title>SICP课后习题 | JaySurplus</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     
     <meta name="author" content="JaySurplus">
@@ -14,34 +14,27 @@
     <link rel="stylesheet" href="//cdn.bootcss.com/highlight.js/9.1.0/styles/solarized-dark.min.css">
 
     
-    <meta name="description" content="Chapter 1 Building Abstractions with ProceduresExercise 1.2
-Translate the following expression into prefix form:
-
-  $(5+4+(2-(3-(6+4/5))))/(3(6-2)(2-7))$
-这一题比较直接， 答案如下：
-; Exercise 1.2
-(/ (+ 5 4 (- 2 (">
+    <meta name="description" content="有关本解题集本解题集采用的是Structure and Interpretation of Computer Programs, by Abelson, Sussman, and Sussman, 可以从这里下载到本书的电子版。
+本解题集的代码全部用Jupyter加载calysto_scheme测试通过。
+目录已完成
+第一章: Exercise 1.2, Exercise 1.3, Exercis">
 <meta property="og:type" content="article">
-<meta property="og:title" content="SICP第一章课后习题">
+<meta property="og:title" content="SICP课后习题">
 <meta property="og:url" content="http://jaysurplus.github.io/2016/05/13/SICP-Ch-1/index.html">
 <meta property="og:site_name" content="JaySurplus">
-<meta property="og:description" content="Chapter 1 Building Abstractions with ProceduresExercise 1.2
-Translate the following expression into prefix form:
-
-  $(5+4+(2-(3-(6+4/5))))/(3(6-2)(2-7))$
-这一题比较直接， 答案如下：
-; Exercise 1.2
-(/ (+ 5 4 (- 2 (">
-<meta property="og:updated_time" content="2016-05-14T22:47:08.000Z">
+<meta property="og:description" content="有关本解题集本解题集采用的是Structure and Interpretation of Computer Programs, by Abelson, Sussman, and Sussman, 可以从这里下载到本书的电子版。
+本解题集的代码全部用Jupyter加载calysto_scheme测试通过。
+目录已完成
+第一章: Exercise 1.2, Exercise 1.3, Exercis">
+<meta property="og:image" content="http://jaysurplus.github.io/images/sicp_book.jpg">
+<meta property="og:updated_time" content="2016-05-15T01:51:40.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="SICP第一章课后习题">
-<meta name="twitter:description" content="Chapter 1 Building Abstractions with ProceduresExercise 1.2
-Translate the following expression into prefix form:
-
-  $(5+4+(2-(3-(6+4/5))))/(3(6-2)(2-7))$
-这一题比较直接， 答案如下：
-; Exercise 1.2
-(/ (+ 5 4 (- 2 (">
+<meta name="twitter:title" content="SICP课后习题">
+<meta name="twitter:description" content="有关本解题集本解题集采用的是Structure and Interpretation of Computer Programs, by Abelson, Sussman, and Sussman, 可以从这里下载到本书的电子版。
+本解题集的代码全部用Jupyter加载calysto_scheme测试通过。
+目录已完成
+第一章: Exercise 1.2, Exercise 1.3, Exercis">
+<meta name="twitter:image" content="http://jaysurplus.github.io/images/sicp_book.jpg">
 
     
     <link rel="alternative" href="/atom.xml" title="JaySurplus" type="application/atom+xml">
@@ -77,7 +70,7 @@ Translate the following expression into prefix form:
 				<h1 class="site-name"><a href="/" title="JaySurplus">JaySurplus</a></h1>
 				<h2 class="blog-motto">Y = λf.(λx.f (x x)) (λx.f (x x))</h2>
 			</div>
-			<div class="navbar"><a class="navbutton navmobile" href="#" title="菜单">
+			<div class="navbar"><a class="navbutton navmobile" href="#" title="Menu">
 			</a></div>
 			<nav class="animated">
 				<ul>
@@ -97,7 +90,7 @@ Translate the following expression into prefix form:
  					
 					<form class="search" action="//google.com/search" method="get" accept-charset="utf-8">
 						<label>Search</label>
-						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="搜索" />
+						<input type="search" id="search" name="q" autocomplete="off" maxlength="20" placeholder="Search" />
 						<input type="hidden" name="q" value="site:jaysurplus.github.io">
 					</form>
 					
@@ -113,34 +106,46 @@ Translate the following expression into prefix form:
 		<header class="article-info clearfix">
   <h1 itemprop="name">
     
-      <a href="/2016/05/13/SICP-Ch-1/" title="SICP第一章课后习题" itemprop="url">SICP第一章课后习题</a>
+      <a href="/2016/05/13/SICP-Ch-1/" title="SICP课后习题" itemprop="url">SICP课后习题</a>
   </h1>
   <p class="article-author">By
        
 		<a href="/about" title="JaySurplus" target="_blank" itemprop="author">JaySurplus</a>
 		
   <p class="article-time">
-    <time datetime="2016-05-13T09:37:06.000Z" itemprop="datePublished"> 发表于 2016-05-13</time>
+    <time datetime="2016-05-13T09:37:06.000Z" itemprop="datePublished"> Published 2016-05-13</time>
     
   </p>
 </header>
 	<div class="article-content">
 		
-		<h1 id="Chapter-1-Building-Abstractions-with-Procedures"><a href="#Chapter-1-Building-Abstractions-with-Procedures" class="headerlink" title="Chapter 1 Building Abstractions with Procedures"></a>Chapter 1 Building Abstractions with Procedures</h1><h2 id="Exercise-1-2"><a href="#Exercise-1-2" class="headerlink" title="Exercise 1.2"></a>Exercise 1.2</h2><blockquote>
+		<h1 id="有关本解题集"><a href="#有关本解题集" class="headerlink" title="有关本解题集"></a>有关本解题集</h1><p><img src="/images/sicp_book.jpg" class="img-logo">本解题集采用的是<a href="https://mitpress.mit.edu/sicp/" target="_blank" rel="external">Structure and Interpretation of Computer Programs</a>, by Abelson, Sussman, and Sussman, 可以从<a href="http://web.mit.edu/alexmv/6.037/sicp.pdf" target="_blank" rel="external">这里</a>下载到本书的电子版。</p>
+<p>本解题集的代码全部用<a href="http://jupyter.org" target="_blank" rel="external">Jupyter</a>加载<br><a href="https://github.com/Calysto/calysto_scheme" target="_blank" rel="external">calysto_scheme</a>测试通过。</p>
+<h2 id="目录"><a href="#目录" class="headerlink" title="目录"></a>目录</h2><h3 id="已完成"><a href="#已完成" class="headerlink" title="已完成"></a>已完成</h3><ul>
+<li>第一章: <a href="#cp1_1_2">Exercise 1.2</a>, <a href="#cp1_1_3">Exercise 1.3</a>, <a href="#cp1_1_8">Exercise 1.8</a></li>
+</ul>
+<h3 id="进行中"><a href="#进行中" class="headerlink" title="进行中"></a>进行中</h3><ul>
+<li><a href="#cp1">第一章: Building Abstractions with Procedures
+</a></li>
+</ul>
+<a id="more"></a>
+<h2 id="答案"><a href="#答案" class="headerlink" title="答案"></a>答案</h2><p><a name="cp1"></a></p>
+<h3 id="第一章"><a href="#第一章" class="headerlink" title="第一章"></a>第一章</h3><p><a name="cp1_1_2"></a></p>
+<h4 id="Exercise-1-2"><a href="#Exercise-1-2" class="headerlink" title="Exercise 1.2"></a>Exercise 1.2</h4><blockquote>
 <p>Translate the following expression into prefix form:</p>
-</blockquote>
-<p>  $(5+4+(2-(3-(6+4/5))))/(3(6-2)(2-7))$</p>
+<p> $(5+4+(2-(3-(6+4/5))))/(3(6-2)(2-7))$</p>
 <p>这一题比较直接， 答案如下：</p>
 <pre><code class="scheme">; Exercise 1.2
 (/ (+ 5 4 (- 2 (- 3 (+ 6 (/ 4 5)))))
   (* 3 (- 6 2) (- 2 7)))
 </code></pre>
-<p>运行结果 </p>
+<p>运行结果</p>
 <pre><code class="python">-37/150
 </code></pre>
-<h2 id="Exercise-1-3"><a href="#Exercise-1-3" class="headerlink" title="Exercise 1.3"></a>Exercise 1.3</h2><blockquote>
-<p>Define a procedure that takes three numbers as arguments and returns the sum of the squares of the two larger numbers.</p>
 </blockquote>
+<p><a name="cp1_1_3"></a></p>
+<h4 id="Exercise-1-3"><a href="#Exercise-1-3" class="headerlink" title="Exercise 1.3"></a>Exercise 1.3</h4><blockquote>
+<p>Define a procedure that takes three numbers as arguments and returns the sum of the squares of the two larger numbers.</p>
 <p>这道题主要的是如何找到三个数中较大的两个数，假设这三个数是<code>a,b,c</code>，定义<code>bigger</code> 和 <code>smaller</code> 分别返回两个数中较大的以及较小的数。具体算法如下：</p>
 <ol>
 <li>(bigger a b) 将会返回三个数中至少第二大的数。</li>
@@ -149,15 +154,15 @@ Translate the following expression into prefix form:
 <p>具体代码如下:</p>
 <pre><code class="scheme">; Exercise 1.3
 ; Computer Square
-(define (square x) 
-  (* x x))
+(define (square x)
+ (* x x))
 
 ; Computer sum of Squares
 (define (sum_of_square x y)
-  (+ (square x) (square y)))
+ (+ (square x) (square y)))
 
 ; Find the bigger one between two numbers
-(define (bigger x y) 
+(define (bigger x y)
   (if (&gt; x y)
       x
       y))
@@ -168,18 +173,21 @@ Translate the following expression into prefix form:
       x
       y))
 
-; Computer the result           
+; Computer the result
 (define (square_sum_bigger_two x y z)
   (sum_of_square (bigger x y) (bigger (smaller x y) z)))
 </code></pre>
 <p>测试:</p>
-<pre><code class="scheme">&gt; (square_sum_bigger_two 2 3 5)
-&gt; 34
+<pre><code class="scheme">\&gt; (square_sum_bigger_two 2 3 5)
+\&gt; 34
 </code></pre>
-<h2 id="Exercise-1-8"><a href="#Exercise-1-8" class="headerlink" title="Exercise 1.8"></a>Exercise 1.8</h2><p>Newton’s method for cube roots is based on the fact that if y is an approximation to the cube root of x, then a better approximation is given by the value</p>
-<p>  $(x/y^2+2y)/3 $</p>
+</blockquote>
+<p><a name="cp1_1_8"></a></p>
+<h4 id="Exercise-1-8"><a href="#Exercise-1-8" class="headerlink" title="Exercise 1.8"></a>Exercise 1.8</h4><blockquote>
+<p>Newton’s method for cube roots is based on the fact that if y is an approximation to the cube root of x, then a better approximation is given by the value</p>
+<p>$(x/y^2+2y)/3 $</p>
 <p>Use this formula to implement a cube-root procedure analogous to the square-root procedure.</p>
-<h3 id="解答"><a href="#解答" class="headerlink" title="解答:"></a>解答:</h3><p>这道题答案的结构与例题<code>1.1.7</code>很相似，需要注意的细节是与立方相关的计算，请具体参考下面的代码：</p>
+<h5 id="解答"><a href="#解答" class="headerlink" title="解答:"></a>解答:</h5><p>这道题答案的结构与例题<code>1.1.7</code>很相似，需要注意的细节是与立方相关的计算，请具体参考下面的代码：</p>
 <pre><code class="scheme">; Cube-root
 
 ; Compute cube
@@ -209,9 +217,10 @@ Translate the following expression into prefix form:
   (cube_root 1.0 x))
 </code></pre>
 <p>测试结果如下:</p>
-<pre><code class="scheme">&gt; (cube_r 31.00614)
-&gt; 3.1415926337132434
+<pre><code class="scheme">\&gt; (cube_r 31.00614)
+\&gt; 3.1415926337132434
 </code></pre>
+</blockquote>
   
 	</div>
 		<footer class="article-footer clearfix">
@@ -234,7 +243,7 @@ Translate the following expression into prefix form:
 
 	<div class="article-share" id="share">
 	
-	  <div data-url="http://jaysurplus.github.io/2016/05/13/SICP-Ch-1/" data-title="SICP第一章课后习题 | JaySurplus" data-tsina="null" class="share clearfix">
+	  <div data-url="http://jaysurplus.github.io/2016/05/13/SICP-Ch-1/" data-title="SICP课后习题 | JaySurplus" data-tsina="null" class="share clearfix">
 	  </div>
 	
 	</div>
@@ -512,7 +521,7 @@ var _hmt = _hmt || [];
 <!-- Totop Begin -->
 
 	<div id="totop">
-	<a title="返回顶部"><img src="/img/scrollup.png"/></a>
+	<a title="Back to Top"><img src="/img/scrollup.png"/></a>
 	</div>
 	<script src="/js/totop.js"></script>
 
