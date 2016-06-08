@@ -24,7 +24,7 @@
 本解题集的代码全部用Jupyter加载calysto_scheme测试通过。
 当然，如果不愿意安装jupyter的话，也可以在turorialspoint的scheme">
 <meta property="og:image" content="http://jaysurplus.github.io/images/sicp_book.jpg">
-<meta property="og:updated_time" content="2016-06-08T09:43:27.000Z">
+<meta property="og:updated_time" content="2016-06-08T09:52:45.000Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="SICP课后习题">
 <meta name="twitter:description" content="有关本解题集本解题集采用的是Structure and Interpretation of Computer Programs, by Abelson, Sussman, and Sussman, 可以从这里下载到本书的电子版。
@@ -370,7 +370,7 @@
 <p>通过观察，这个函数定义的函数是 $h=2^(2^(.^(.^2)))}n$(指数是从上向下计算)。此时, <code>Ackermann</code>函数的增长速度非常快，当<code>y=5</code>时已无法计算出具体数值, 请注意这还仅仅是<code>x=2</code>。</p>
 <p>另外值得一提的是,本题对<code>Ackermann</code>函数的定义与常见的形式有所不同, 下面给出更加常见的形式:</p>
 <pre><code class="scheme">(define (Ack x y)
-(cond ((= x 0) (+ y 1))
+ (cond ((= x 0) (+ y 1))
       ((= y 0) (Ack (- x 1) 1))
       (else (Ack (- x 1)
                  (Ack x (- y 1))))))
