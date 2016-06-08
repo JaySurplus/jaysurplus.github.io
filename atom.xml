@@ -5,7 +5,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="http://jaysurplus.github.io/"/>
-  <updated>2016-05-15T03:49:05.000Z</updated>
+  <updated>2016-06-08T07:13:22.000Z</updated>
   <id>http://jaysurplus.github.io/</id>
   
   <author>
@@ -20,13 +20,13 @@
     <link href="http://jaysurplus.github.io/2016/05/13/SICP-Ch-1/"/>
     <id>http://jaysurplus.github.io/2016/05/13/SICP-Ch-1/</id>
     <published>2016-05-13T09:37:06.000Z</published>
-    <updated>2016-05-15T03:49:05.000Z</updated>
+    <updated>2016-06-08T07:13:22.000Z</updated>
     
     <content type="html">&lt;h1 id=&quot;有关本解题集&quot;&gt;&lt;a href=&quot;#有关本解题集&quot; class=&quot;headerlink&quot; title=&quot;有关本解题集&quot;&gt;&lt;/a&gt;有关本解题集&lt;/h1&gt;&lt;p&gt;&lt;img src=&quot;/images/sicp_book.jpg&quot; class=&quot;img-logo&quot;&gt;本解题集采用的是&lt;a href=&quot;https://mitpress.mit.edu/sicp/&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Structure and Interpretation of Computer Programs&lt;/a&gt;, by Abelson, Sussman, and Sussman, 可以从&lt;a href=&quot;http://web.mit.edu/alexmv/6.037/sicp.pdf&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;这里&lt;/a&gt;下载到本书的电子版。&lt;/p&gt;
 &lt;p&gt;本解题集的代码全部用&lt;a href=&quot;http://jupyter.org&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;Jupyter&lt;/a&gt;加载&lt;a href=&quot;https://github.com/Calysto/calysto_scheme&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;calysto_scheme&lt;/a&gt;测试通过。&lt;/p&gt;
 &lt;p&gt;当然，如果不愿意安装jupyter的话，也可以在&lt;a href=&quot;http://www.tutorialspoint.com/execute_scheme_online.php&quot; target=&quot;_blank&quot; rel=&quot;external&quot;&gt;turorialspoint&lt;/a&gt;的scheme IDE来测试这些代码。&lt;/p&gt;
 &lt;h2 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h2&gt;&lt;h3 id=&quot;已完成&quot;&gt;&lt;a href=&quot;#已完成&quot; class=&quot;headerlink&quot; title=&quot;已完成&quot;&gt;&lt;/a&gt;已完成&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;第一章: &lt;a href=&quot;#cp1_1_2&quot;&gt;Exercise 1.2&lt;/a&gt;, &lt;a href=&quot;#cp1_1_3&quot;&gt;Exercise 1.3&lt;/a&gt;, &lt;a href=&quot;#cp1_1_8&quot;&gt;Exercise 1.8&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;第一章: &lt;a href=&quot;#cp1_1_2&quot;&gt;Exercise 1.2&lt;/a&gt;, &lt;a href=&quot;#cp1_1_3&quot;&gt;Exercise 1.3&lt;/a&gt;, &lt;a href=&quot;#cp1_1_8&quot;&gt;Exercise 1.8&lt;/a&gt;, &lt;a href=&quot;#cp1_1_9&quot;&gt;Exercise 1.9&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;进行中&quot;&gt;&lt;a href=&quot;#进行中&quot; class=&quot;headerlink&quot; title=&quot;进行中&quot;&gt;&lt;/a&gt;进行中&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#cp1&quot;&gt;第一章: Building Abstractions with Procedures
@@ -128,6 +128,43 @@
 \&amp;gt; 3.1415926337132434
 &lt;/code&gt;&lt;/pre&gt;
 &lt;/blockquote&gt;
+&lt;p&gt;&lt;a name=&quot;cp1_1_9&quot;&gt;&lt;/a&gt;&lt;/p&gt;
+&lt;h4 id=&quot;Exercise-1-9&quot;&gt;&lt;a href=&quot;#Exercise-1-9&quot; class=&quot;headerlink&quot; title=&quot;Exercise 1.9&quot;&gt;&lt;/a&gt;Exercise 1.9&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt;这里将第一个&lt;code&gt;+&lt;/code&gt;替换为plus, 以下是第一个plus:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;scheme&quot;&gt;(define (plus a b)
+ (if (= a 0)
+     b
+     (inc (plus (dec a) b))))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;下面是对&lt;code&gt;(plus 4 5)&lt;/code&gt;进行求值的具体步骤:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;scheme&quot;&gt;(plus 4 5)
+|(inc (plus 3 5))
+|(inc (inc (plus 2 5)))
+|(inc (inc (inc (plus 1 5))))
+|(inc (inc (inc (inc (plus 0 5)))))
+|(inc (inc (inc (inc 5)))
+|(inc (inc (inc 6)))
+|(inc (inc 7))
+|(inc 8)
+9
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;很明显，这是一个线性递归计算过程(&lt;code&gt;a linear recursive process&lt;/code&gt;)。&lt;/p&gt;
+&lt;p&gt;下面是第二个&lt;code&gt;+&lt;/code&gt;的定义:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;scheme&quot;&gt;(define (+ a b)
+ (if (= a 0)
+     b
+     (+ (dec a) (inc b))))
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;以下是对&lt;code&gt;(+ 4 5)&lt;/code&gt;进行求值的具体过程:&lt;/p&gt;
+&lt;pre&gt;&lt;code class=&quot;scheme&quot;&gt;(+ 4 5)
+|(+ 3 6)
+|(+ 2 7)
+|(+ 1 8)
+|(+ 0 9)
+9
+&lt;/code&gt;&lt;/pre&gt;
+&lt;p&gt;这是一个线性迭代计算过程(&lt;code&gt;a linear iterative process&lt;/code&gt;)。&lt;/p&gt;
+&lt;/blockquote&gt;
 </content>
     
     <summary type="html">
@@ -136,7 +173,7 @@
 &lt;p&gt;本解题集的代码全部用&lt;a href=&quot;http://jupyter.org&quot;&gt;Jupyter&lt;/a&gt;加载&lt;a href=&quot;https://github.com/Calysto/calysto_scheme&quot;&gt;calysto_scheme&lt;/a&gt;测试通过。&lt;/p&gt;
 &lt;p&gt;当然，如果不愿意安装jupyter的话，也可以在&lt;a href=&quot;http://www.tutorialspoint.com/execute_scheme_online.php&quot;&gt;turorialspoint&lt;/a&gt;的scheme IDE来测试这些代码。&lt;/p&gt;
 &lt;h2 id=&quot;目录&quot;&gt;&lt;a href=&quot;#目录&quot; class=&quot;headerlink&quot; title=&quot;目录&quot;&gt;&lt;/a&gt;目录&lt;/h2&gt;&lt;h3 id=&quot;已完成&quot;&gt;&lt;a href=&quot;#已完成&quot; class=&quot;headerlink&quot; title=&quot;已完成&quot;&gt;&lt;/a&gt;已完成&lt;/h3&gt;&lt;ul&gt;
-&lt;li&gt;第一章: &lt;a href=&quot;#cp1_1_2&quot;&gt;Exercise 1.2&lt;/a&gt;, &lt;a href=&quot;#cp1_1_3&quot;&gt;Exercise 1.3&lt;/a&gt;, &lt;a href=&quot;#cp1_1_8&quot;&gt;Exercise 1.8&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;第一章: &lt;a href=&quot;#cp1_1_2&quot;&gt;Exercise 1.2&lt;/a&gt;, &lt;a href=&quot;#cp1_1_3&quot;&gt;Exercise 1.3&lt;/a&gt;, &lt;a href=&quot;#cp1_1_8&quot;&gt;Exercise 1.8&lt;/a&gt;, &lt;a href=&quot;#cp1_1_9&quot;&gt;Exercise 1.9&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 &lt;h3 id=&quot;进行中&quot;&gt;&lt;a href=&quot;#进行中&quot; class=&quot;headerlink&quot; title=&quot;进行中&quot;&gt;&lt;/a&gt;进行中&lt;/h3&gt;&lt;ul&gt;
 &lt;li&gt;&lt;a href=&quot;#cp1&quot;&gt;第一章: Building Abstractions with Procedures
